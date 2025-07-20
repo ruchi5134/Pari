@@ -122,11 +122,11 @@ async def welcome(client, message: Message):
                     pass
             if member.id == app.id:
                 if message.chat.type != ChatType.SUPERGROUP:
-                    await message.reply_text(_["start_5"])
+                    await message.reply_text(_["start"])
                     return await app.leave_chat(message.chat.id)
                 if message.chat.id in await blacklisted_chats():
                     await message.reply_text(
-                        _["start_5"].format(
+                        _["start"].format(
                             app.mention,
                             f"https://t.me/{app.username}?start=sudolist",
                             config.SUPPORT_CHAT,
